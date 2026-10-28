@@ -126,8 +126,3 @@ D:\project\honeypot\
 
 ---
 
-## 💼 How to Talk About This in an Interview
-
-- **Demonstrate Deception Engineering:** Explain the strategic value of canary/honeypot decoys in an enterprise network to detect lateral movement with zero false positives.
-- **Explain the Detection Pipeline:** Discuss how raw telemetry from socket listeners is converted into structured JSON, evaluated against Sigma rules, and visualized for SOC analysis.
-- **Highlight Safe Architecture:** Emphasize why the project enforces loopback binding (`127.0.0.1`) and sandboxed command responses to eliminate risk.
