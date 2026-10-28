@@ -1,0 +1,24 @@
+title: Unauthorized Connection to Honeypot Decoy Service
+id: 5f1b2c3d-4e5a-6b7c-8d9e-0f1a2b3c4d5e
+status: test
+description: Detects inbound network connections targeting internal honeypot decoy ports (e.g. 2222, 8080, 2121). Any connection to these ports indicates unauthorized lateral movement or port scanning.
+author: Honeypot Defense Lab
+date: 2026-10-28
+references:
+    - https://attack.mitre.org/techniques/T1046/
+tags:
+    - attack.discovery
+    - attack.t1046
+logsource:
+    category: network_connection
+    product: windows
+detection:
+    selection:
+        DestinationPort:
+            - 2222
+            - 8080
+            - 2121
+    condition: selection
+falsepositives:
+    - Legitimate internal vulnerability scanner (should be allowlisted by source IP).
+level: high
